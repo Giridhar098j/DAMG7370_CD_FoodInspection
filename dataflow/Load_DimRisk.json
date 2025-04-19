@@ -1,0 +1,93 @@
+{
+	"name": "Load_DimRisk",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Stage_INS_TABLE",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				},
+				{
+					"dataset": {
+						"referenceName": "Snowflake_DimRisk",
+						"type": "DatasetReference"
+					},
+					"name": "DimRiskMaxId"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Snowflake_DimRisk",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "join1"
+				},
+				{
+					"name": "surrogateKey1"
+				},
+				{
+					"name": "derivedColumn1"
+				}
+			],
+			"scriptLines": [
+				"parameters{",
+				"     Job_Id as string (\"20\")",
+				"}",
+				"source(output(",
+				"          RISK as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     query: 'SELECT DISTINCT(RISK) FROM STG_FOOD_INSPECTIONS',",
+				"     format: 'query') ~> source1",
+				"source(output(",
+				"          MAXRISKSK as decimal(38,0)",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     query: 'select NVL(MAX(RISK_SK),0) as MAXRISKSK FROM FOODCD_SCHEMA.DIM_RISK',",
+				"     format: 'query') ~> DimRiskMaxId",
+				"source1, DimRiskMaxId join(1==1,",
+				"     joinType:'cross',",
+				"     matchType:'exact',",
+				"     ignoreSpaces: false,",
+				"     broadcast: 'auto')~> join1",
+				"join1 keyGenerate(output(ROWNUM as long),",
+				"     startAt: 1L,",
+				"     stepValue: 1L) ~> surrogateKey1",
+				"surrogateKey1 derive(RISK_SK = MAXRISKSK+ROWNUM,",
+				"          Job_Id = $Job_Id,",
+				"          Load_Dt = currentDate()) ~> derivedColumn1",
+				"derivedColumn1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          RISK_SK as decimal(38,0),",
+				"          RISK as string,",
+				"          JOB_ID as string,",
+				"          LOAD_DT as date",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     stageInsert: true,",
+				"     mapColumn(",
+				"          RISK_SK,",
+				"          JOB_ID = Job_Id,",
+				"          LOAD_DT = Load_Dt",
+				"     )) ~> sink1"
+			]
+		}
+	}
+}
