@@ -1,0 +1,53 @@
+{
+	"name": "SnowflakeDIM_Business",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SnowflakeCD",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SnowflakeV2Table",
+		"schema": [
+			{
+				"name": "BUSINESS_SK",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "LICENSE_NUM",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "DBA_NAME",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "AKA_NAME",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "FACILITY_TYPE",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "SOURCE_ID",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "JOB_ID",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "LOAD_DT",
+				"type": "DATE"
+			}
+		],
+		"typeProperties": {
+			"schema": "FOODCD_SCHEMA",
+			"table": "DIM_BUSINESS"
+		}
+	}
+}
