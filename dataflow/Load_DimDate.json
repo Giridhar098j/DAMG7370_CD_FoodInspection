@@ -1,5 +1,5 @@
 {
-	"name": "DimDateMaxId",
+	"name": "Load_DimDate",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
