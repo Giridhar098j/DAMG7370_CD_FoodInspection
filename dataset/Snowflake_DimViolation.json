@@ -1,0 +1,45 @@
+{
+	"name": "Snowflake_DimViolation",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SnowflakeCD",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SnowflakeV2Table",
+		"schema": [
+			{
+				"name": "VIOLATION_ID_SK",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "VIOLATION_CODE",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "VIOLATION_DESCRIPTION",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "SOURCE_ID",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "JOB_ID",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "LOAD_DT",
+				"type": "DATE"
+			}
+		],
+		"typeProperties": {
+			"schema": "FOODCD_SCHEMA",
+			"table": "DIM_VIOLATION"
+		}
+	}
+}
