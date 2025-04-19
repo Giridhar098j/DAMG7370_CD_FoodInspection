@@ -1,0 +1,89 @@
+{
+	"name": "Raw_Chicagotable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SnowflakeCD",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SnowflakeV2Table",
+		"schema": [
+			{
+				"name": "Inspection ID",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "DBA Name",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "AKA Name",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "License #",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Facility Type",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Risk",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Address",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "City",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "State",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Zip",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Inspection Date",
+				"type": "TIMESTAMP_NTZ"
+			},
+			{
+				"name": "Inspection Type",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Results",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violations",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Latitude",
+				"type": "FLOAT"
+			},
+			{
+				"name": "Longitude",
+				"type": "FLOAT"
+			},
+			{
+				"name": "Location",
+				"type": "VARCHAR"
+			}
+		],
+		"typeProperties": {
+			"schema": "FOODCD_SCHEMA",
+			"table": "RAW_CHICAGO_INSPECTIONS"
+		}
+	}
+}

@@ -1,0 +1,531 @@
+{
+	"name": "Raw_Dallastable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SnowflakeCD",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SnowflakeV2Table",
+		"schema": [
+			{
+				"name": "Restaurant Name",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Inspection Type",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Inspection Date",
+				"type": "TIMESTAMP_NTZ"
+			},
+			{
+				"name": "Inspection Score",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Street Number",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Street Name",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Street Direction",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Street Type",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Street Unit",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Street Address",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Zip Code",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 1",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 1",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 1",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 1",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 2",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 2",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 2",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 2",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 3",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 3",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 3",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 3",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 4",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 4",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 4",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 4",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 5",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 5",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 5",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 5",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 6",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 6",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 6",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 6",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 7",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 7",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 7",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 7",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 8",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 8",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 8",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 8",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 9",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 9",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 9",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 9",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 10",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 10",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 10",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 10",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 11",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 11",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 11",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 11",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 12",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 12",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 12",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 12",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 13",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 13",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 13",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 13",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 14",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 14",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 14",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 14",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 15",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 15",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 15",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 15",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 16",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 16",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 16",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 16",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 17",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 17",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 17",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 17",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 18",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 18",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 18",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 18",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 19",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 19",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 19",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 19",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 20",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 20",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 20",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 20",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 21",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 21",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 21",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 21",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 22",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 22",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 22",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 22",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 23",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 23",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 23",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 23",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 24",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 24",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 24",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 24",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Description - 25",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Points - 25",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "Violation Detail - 25",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Violation Memo - 25",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Inspection Month",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Inspection Year",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Lat Long Location",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "Location",
+				"type": "VARCHAR"
+			}
+		],
+		"typeProperties": {
+			"schema": "FOODCD_SCHEMA",
+			"table": "RAW_DALLAS_INSPECTIONS"
+		}
+	}
+}

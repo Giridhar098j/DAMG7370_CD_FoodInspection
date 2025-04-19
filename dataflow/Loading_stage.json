@@ -1,0 +1,119 @@
+{
+	"name": "Loading_stage",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "Stage_Table",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "Stage_INS_TABLE",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "derivedColumn1"
+				}
+			],
+			"scriptLines": [
+				"parameters{",
+				"     JOB_ID as string (\"20\")",
+				"}",
+				"source(output(",
+				"          INSPECTION_ID as long,",
+				"          DBA_NAME as string,",
+				"          AKA_NAME as string,",
+				"          LICENSE_NUM as long,",
+				"          FACILITY_TYPE as string,",
+				"          RISK as string,",
+				"          { ADDRESS} as string,",
+				"          CITY as string,",
+				"          STATE as string,",
+				"          ZIP_CODE as string,",
+				"          INSPECTION_DATE as date,",
+				"          { INSPECTION_TYPE} as string,",
+				"          RESULTS as string,",
+				"          { VIOLATION_CODE} as string,",
+				"          VIOLATION_DESCRIPTION as string,",
+				"          { VIOLATION_COMMENT} as string,",
+				"          LATITUDE as double,",
+				"          LONGITUDE as double,",
+				"          SOURCE_DATA as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'parquet') ~> source1",
+				"source1 derive(JOB_ID = $JOB_ID,",
+				"          Load_Dt = currentDate()) ~> derivedColumn1",
+				"derivedColumn1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          INSPECTION_ID as decimal(38,0),",
+				"          DBA_NAME as string,",
+				"          AKA_NAME as string,",
+				"          LICENSE_NUM as decimal(38,0),",
+				"          FACILITY_TYPE as string,",
+				"          RISK as string,",
+				"          ADDRESS as string,",
+				"          CITY as string,",
+				"          STATE as string,",
+				"          ZIP_CODE as string,",
+				"          INSPECTION_DATE as date,",
+				"          INSPECTION_TYPE as string,",
+				"          RESULTS as string,",
+				"          VIOLATION_CODE as string,",
+				"          VIOLATION_DESCRIPTION as string,",
+				"          VIOLATION_COMMENT as string,",
+				"          LATITUDE as double,",
+				"          LONGITUDE as double,",
+				"          SOURCE_DATA as string,",
+				"          DI_JOB_ID as string,",
+				"          DI_LOAD_DT as timestamp",
+				"     ),",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     stageInsert: true,",
+				"     mapColumn(",
+				"          INSPECTION_ID,",
+				"          DBA_NAME,",
+				"          AKA_NAME,",
+				"          LICENSE_NUM,",
+				"          FACILITY_TYPE,",
+				"          RISK,",
+				"          ADDRESS = { ADDRESS},",
+				"          CITY,",
+				"          STATE,",
+				"          ZIP_CODE,",
+				"          INSPECTION_DATE,",
+				"          INSPECTION_TYPE = { INSPECTION_TYPE},",
+				"          RESULTS,",
+				"          VIOLATION_CODE = { VIOLATION_CODE},",
+				"          VIOLATION_DESCRIPTION,",
+				"          VIOLATION_COMMENT = LATITUDE,",
+				"          LATITUDE,",
+				"          LONGITUDE,",
+				"          SOURCE_DATA,",
+				"          DI_JOB_ID = JOB_ID,",
+				"          DI_LOAD_DT = Load_Dt",
+				"     )) ~> sink1"
+			]
+		}
+	}
+}
