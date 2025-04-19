@@ -1,5 +1,5 @@
 {
-	"name": "DimViolationMaxId",
+	"name": "Load_DimViolation",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
