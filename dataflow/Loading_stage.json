@@ -21,7 +21,11 @@
 					"name": "sink1"
 				}
 			],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "derivedColumn1"
+				}
+			],
 			"scriptLines": [
 				"parameters{",
 				"     JOB_ID as string (\"20\")",
@@ -51,7 +55,9 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false,",
 				"     format: 'parquet') ~> source1",
-				"source1 sink(allowSchemaDrift: true,",
+				"source1 derive(JOB_ID = $JOB_ID,",
+				"          Load_Dt = currentDate()) ~> derivedColumn1",
+				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
 				"          INSPECTION_ID as decimal(38,0),",
@@ -83,7 +89,28 @@
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     stageInsert: true) ~> sink1"
+				"     stageInsert: true,",
+				"     mapColumn(",
+				"          INSPECTION_ID,",
+				"          DBA_NAME,",
+				"          AKA_NAME,",
+				"          LICENSE_NUM,",
+				"          FACILITY_TYPE,",
+				"          RISK,",
+				"          ADDRESS = { ADDRESS},",
+				"          CITY,",
+				"          STATE,",
+				"          ZIP_CODE,",
+				"          INSPECTION_DATE,",
+				"          INSPECTION_TYPE = { INSPECTION_TYPE},",
+				"          RESULTS,",
+				"          VIOLATION_CODE = { VIOLATION_CODE},",
+				"          VIOLATION_DESCRIPTION,",
+				"          VIOLATION_COMMENT = LATITUDE,",
+				"          LATITUDE,",
+				"          LONGITUDE,",
+				"          SOURCE_DATA",
+				"     )) ~> sink1"
 			]
 		}
 	}
