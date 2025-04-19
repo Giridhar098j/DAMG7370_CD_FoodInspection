@@ -109,7 +109,9 @@
 				"          VIOLATION_COMMENT = LATITUDE,",
 				"          LATITUDE,",
 				"          LONGITUDE,",
-				"          SOURCE_DATA",
+				"          SOURCE_DATA,",
+				"          DI_JOB_ID = JOB_ID,",
+				"          DI_LOAD_DT = Load_Dt",
 				"     )) ~> sink1"
 			]
 		}
