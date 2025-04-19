@@ -1,0 +1,73 @@
+{
+	"name": "Snowflake_DimDate",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SnowflakeCD",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SnowflakeV2Table",
+		"schema": [
+			{
+				"name": "DATE_SK",
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
+			},
+			{
+				"name": "DATE",
+				"type": "DATE"
+			},
+			{
+				"name": "DAY_NAME",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "DAY_ABBR",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "DAY_NUM",
+				"type": "NUMBER",
+				"precision": 2,
+				"scale": 0
+			},
+			{
+				"name": "MONTH_NAME",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "MONTH_ABBR",
+				"type": "VARCHAR"
+			},
+			{
+				"name": "MONTH_NUM",
+				"type": "NUMBER",
+				"precision": 2,
+				"scale": 0
+			},
+			{
+				"name": "QTR_NUM",
+				"type": "NUMBER",
+				"precision": 2,
+				"scale": 0
+			},
+			{
+				"name": "YEAR_NUM",
+				"type": "NUMBER",
+				"precision": 4,
+				"scale": 0
+			},
+			{
+				"name": "IS_WEEKEND",
+				"type": "NUMBER",
+				"precision": 2,
+				"scale": 0
+			}
+		],
+		"typeProperties": {
+			"schema": "FOODCD_SCHEMA",
+			"table": "DIM_DATE"
+		}
+	}
+}
