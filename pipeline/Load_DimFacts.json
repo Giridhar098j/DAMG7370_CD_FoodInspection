@@ -76,6 +76,8 @@
 			{
 				"name": "DF_DimLocation",
 				"type": "ExecuteDataFlow",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "DF_DimInspection",
@@ -113,8 +115,6 @@
 			{
 				"name": "DF_DimRisk",
 				"type": "ExecuteDataFlow",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "DF_DimLocation",
