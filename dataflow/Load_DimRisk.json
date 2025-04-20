@@ -84,6 +84,7 @@
 				"     stageInsert: true,",
 				"     mapColumn(",
 				"          RISK_SK,",
+				"          RISK,",
 				"          JOB_ID = Job_Id,",
 				"          LOAD_DT = Load_Dt",
 				"     )) ~> sink1"
