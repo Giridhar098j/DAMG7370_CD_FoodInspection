@@ -279,7 +279,7 @@
 				"     stepValue: 1L) ~> surrogateKey1",
 				"surrogateKey1 derive(JOB_ID = $JOB_ID,",
 				"          Load_Dt = currentDate(),",
-				"          INSPECTIONSK = MAXINSPECTIONSK + ROWNUM) ~> derivedColumn1",
+				"          INSPECTIONSK = INSPECTIONSK + ROWNUM) ~> derivedColumn1",
 				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
