@@ -115,6 +115,8 @@
 			{
 				"name": "DF_DimRisk",
 				"type": "ExecuteDataFlow",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "DF_DimLocation",
@@ -191,8 +193,6 @@
 			{
 				"name": "Data flow1",
 				"type": "ExecuteDataFlow",
-				"state": "Inactive",
-				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [
 					{
 						"activity": "DF_DimViolation",
