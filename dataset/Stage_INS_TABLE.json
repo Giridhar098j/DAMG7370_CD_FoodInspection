@@ -66,7 +66,9 @@
 			},
 			{
 				"name": "VIOLATION_CODE",
-				"type": "VARCHAR"
+				"type": "NUMBER",
+				"precision": 38,
+				"scale": 0
 			},
 			{
 				"name": "VIOLATION_DESCRIPTION",
@@ -78,11 +80,15 @@
 			},
 			{
 				"name": "LATITUDE",
-				"type": "FLOAT"
+				"type": "FLOAT",
+				"precision": 38,
+				"scale": 0
 			},
 			{
 				"name": "LONGITUDE",
-				"type": "FLOAT"
+				"type": "FLOAT",
+				"precision": 38,
+				"scale": 0
 			},
 			{
 				"name": "SOURCE_DATA",
@@ -94,7 +100,7 @@
 			},
 			{
 				"name": "DI_LOAD_DT",
-				"type": "TIMESTAMP_NTZ"
+				"type": "DATE"
 			}
 		],
 		"typeProperties": {
